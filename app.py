@@ -671,8 +671,9 @@ def run_bot():
             time.sleep(5)
 
 
+# Botni Gunicorn ham o'qishi uchun if dan tashqariga chiqaramiz
 threading.Thread(target=run_bot, daemon=True).start()
 
-if __name__== "__main__":
+if __name__ == "__main__":
     PORT = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=PORT, debug=False)

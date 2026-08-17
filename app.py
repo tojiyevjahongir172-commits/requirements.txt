@@ -671,7 +671,8 @@ def run_bot():
             time.sleep(5)
 
 
-if __name__ == "__main__":
+threading.Thread(target=run_bot, daemon=True).start()
+
+if name == "main":
     PORT = int(os.environ.get("PORT", 5000))
-    threading.Thread(target=run_bot, daemon=True).start()
     app.run(host="0.0.0.0", port=PORT, debug=False)
